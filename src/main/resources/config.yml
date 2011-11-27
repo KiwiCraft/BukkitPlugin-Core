@@ -1,0 +1,11 @@
+messages:
+  kokakiwi:
+    join: '&cLe grand &bKoka El Kiwi&c est sur le serveur!'
+    kick: '&cLe grand &bKoka El Kiwi&c est parti.'
+    leave: '&cLe grand &bKoka El Kiwi&c est parti!'
+  all:
+    join: '&7{NAME} a rejoint le serveur.'
+    kick: '&7{NAME} est parti.'
+    leave: '&7{NAME} est parti.'
+chat:
+  format: '{PREFIX}{NAME} &f: {MESSAGE}'

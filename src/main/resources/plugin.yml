@@ -1,0 +1,8 @@
+name: KiwiCraft
+main: com.kokakiwi.bukkit.plugins.kiwicraft.KiwiCraft
+version: ${project.version}
+author: KokaKiwi
+commands:
+  kc:
+    description: Main command for KiwiCraft Plugin.
+    usage: /<command> help
