@@ -12,6 +12,16 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.anjocaido</groupId>
+			<artifactId>GroupManager</artifactId>
+			<version>1.0-alpha-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>me.taylorkelly</groupId>
+			<artifactId>help</artifactId>
+			<version>1</version>
+		</dependency>
 	</dependencies>
 	
 	<build>

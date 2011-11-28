@@ -13,6 +13,7 @@ public class KCListenersManager
     
     // Listeners
     private final KCPlayerListener playerListener;
+    private final KCServerListener serverListener;
     
     public KCListenersManager(KiwiCraft plugin, PluginManager pm)
     {
@@ -20,6 +21,7 @@ public class KCListenersManager
         this.pm = pm;
         
         playerListener = new KCPlayerListener(plugin);
+        serverListener = new KCServerListener(plugin);
     }
     
     public void registerEvents()
@@ -31,6 +33,9 @@ public class KCListenersManager
         pm.registerEvent(Event.Type.PLAYER_KICK, playerListener,
                 Event.Priority.Normal, plugin);
         pm.registerEvent(Event.Type.PLAYER_QUIT, playerListener,
+                Event.Priority.Normal, plugin);
+        
+        pm.registerEvent(Event.Type.PLUGIN_ENABLE, serverListener,
                 Event.Priority.Normal, plugin);
     }
 }

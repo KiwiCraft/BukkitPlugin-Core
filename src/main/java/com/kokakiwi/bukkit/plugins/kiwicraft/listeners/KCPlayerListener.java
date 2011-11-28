@@ -3,6 +3,8 @@ package com.kokakiwi.bukkit.plugins.kiwicraft.listeners;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.anjocaido.groupmanager.data.Group;
+import org.anjocaido.groupmanager.data.User;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -57,7 +59,7 @@ public class KCPlayerListener extends PlayerListener
     {
         String format = plugin.getConfig().getString("chat.format");
         final Map<String, String> keys = new HashMap<String, String>();
-        keys.put("PREFIX", "");
+        keys.put("PREFIX", getPlayerPrefix(event.getPlayer()));
         keys.put("NAME", event.getPlayer().getDisplayName());
         keys.put("MESSAGE", event.getMessage());
         format = ChatFormatter.format(format, keys);
@@ -87,5 +89,16 @@ public class KCPlayerListener extends PlayerListener
         }
         
         return message;
+    }
+    
+    public String getPlayerPrefix(Player player)
+    {
+        String prefix = "";
+        
+        User user = plugin.getGroupManager().getWorldsHolder().getDefaultWorld().getUser(player.getName());
+        Group group = user.getGroup();
+        prefix = group.getVariables().getVarString("prefix");
+        
+        return prefix;
     }
 }
