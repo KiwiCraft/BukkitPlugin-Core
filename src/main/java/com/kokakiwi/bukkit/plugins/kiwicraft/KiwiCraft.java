@@ -10,6 +10,7 @@ import org.anjocaido.groupmanager.GroupManager;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.kokakiwi.bukkit.plugins.kiwicraft.commands.ExpCommand;
 import com.kokakiwi.bukkit.plugins.kiwicraft.commands.HelpCommand;
 import com.kokakiwi.bukkit.plugins.kiwicraft.commands.KCCommandExecutor;
 import com.kokakiwi.bukkit.plugins.kiwicraft.commands.ReloadCommand;
@@ -76,6 +77,8 @@ public class KiwiCraft extends JavaPlugin
         commandExecutor.register("reload", ReloadCommand.class);
         commandExecutor.register("r", ReloadCommand.class);
         
+        commandExecutor.register("exp", ExpCommand.class);
+        
         getCommand("kc").setExecutor(commandExecutor);
     }
     
@@ -85,7 +88,8 @@ public class KiwiCraft extends JavaPlugin
         {
             help.registerCommand("gm", "Change your Gamemode", this);
             help.registerCommand("gm [0/1]", "Change your Gamemode", this);
-            help.registerCommand("gm [Player name] [0/1]", "Change player's Gamemode", this, "gamemode.change.others");
+            help.registerCommand("gm [Player name] [0/1]",
+                    "Change player's Gamemode", this, "gamemode.change.others");
         }
     }
     

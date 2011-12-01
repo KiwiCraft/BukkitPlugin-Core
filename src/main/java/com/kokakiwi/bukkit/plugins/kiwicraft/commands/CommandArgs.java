@@ -31,6 +31,11 @@ public class CommandArgs
         return args;
     }
     
+    public int argsLength()
+    {
+        return args.size();
+    }
+    
     public String getString(int index)
     {
         if (index > args.size())
